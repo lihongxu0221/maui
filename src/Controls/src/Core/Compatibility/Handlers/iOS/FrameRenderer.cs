@@ -184,8 +184,7 @@ namespace Microsoft.Maui.Controls.Handlers.Compatibility
 
 		public override void Draw(CGRect rect)
 		{
-			if (_actualView != null)
-				_actualView.Frame = Bounds;
+			_actualView?.Frame = Bounds;
 
 			base.Draw(rect);
 
@@ -229,7 +228,8 @@ namespace Microsoft.Maui.Controls.Handlers.Compatibility
 				_pendingSuperViewSetNeedsLayout = false;
 				this.Superview?.SetNeedsLayout();
 			}
-			else{
+			else
+			{
 				_pendingSuperViewSetNeedsLayout = true;
 			}
 		}
